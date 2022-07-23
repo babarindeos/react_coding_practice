@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './App';
-import HelloWorld from './Helloworld';
-import './index.css';
+
+class Car{
+    constructor(name){
+        this.brand = name;
+    }
+
+    present(){
+        return 'I have a ' + this.brand;
+    }
+}
 
 function Index(props){
 
-  const myFirstElement = "Testing";
-  
+  const mycar = new Car("Ford");
+
   return (
       <div className="body">
-          <HelloWorld/>
-          <p>{ myFirstElement }</p>
-          <h1>Hello World <span>{ myFirstElement }</span> </h1>
-          <App />
+          {mycar.present()}
     </div>
     );
 }
